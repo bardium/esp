@@ -226,7 +226,7 @@ function ESP:Add(obj, options)
 		Name = options.Name or obj.Name,
 		Type = "Box",
 		Color = options.Color --[[or self:GetColor(obj)]],
-		Size = obj:GetBoundingBox(),
+		Size = Vector3.new(obj:GetBoundingBox().X, obj:GetBoundingBox().Y, 0),
 		Object = obj,
 		PrimaryPart = options.PrimaryPart or obj.ClassName == "Model" and (obj.PrimaryPart or obj:FindFirstChild("HumanoidRootPart") or obj:FindFirstChildWhichIsA("BasePart")) or obj:IsA("BasePart") and obj,
 		Components = {},
